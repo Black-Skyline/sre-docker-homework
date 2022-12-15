@@ -1,0 +1,8 @@
+# 基于上面查看的tag为latest的本地nginx镜像
+FROM nginx:latest
+# 指定当前工作目录
+WORKDIR /work_space
+# 把本地当前的目录的所有复制到上一行指定的工作目录
+COPY . .
+# 把a.txt里自定义的内容重定向到指定的index.html文件里
+RUN cat a.txt > /usr/share/nginx/html/index.html
